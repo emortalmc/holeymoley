@@ -1,0 +1,25 @@
+name: "Build and deploy"
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: "ubuntu-latest"
+    steps:
+      - uses: "emortalmc/actions/java/build@main"
+        with:
+          token: "${{ secrets.GITHUB_TOKEN }}"
+          java-version: "21"
+          java-distribution: "zulu"
+
+  deploy:
+    needs: "build"
+    runs-on: "ubuntu-latest"
+    steps:
+      - uses: "emortalmc/actions/argo-sync@main"
+        with:
+          deployment-name: "holeymoley"
+          values-path: "server/values/holeymoley.yaml"
+          deployments-repo-token: "${{ secrets.DEPLOYMENTS_REPO_TOKEN }}"
