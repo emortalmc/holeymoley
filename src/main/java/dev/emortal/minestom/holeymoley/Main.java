@@ -1,9 +1,9 @@
 package dev.emortal.minestom.holeymoley;
 
-import dev.emortal.minestom.holeymoley.game.HoleyMoleyGame;
-import dev.emortal.minestom.holeymoley.map.MapManager;
 import dev.emortal.minestom.gamesdk.MinestomGameServer;
 import dev.emortal.minestom.gamesdk.config.GameSdkConfig;
+import dev.emortal.minestom.holeymoley.game.HoleyMoleyGame;
+import dev.emortal.minestom.holeymoley.map.MapManager;
 import io.github.togar2.pvp.MinestomPvP;
 import net.minestom.server.MinecraftServer;
 
